@@ -1,6 +1,6 @@
 # PAOHI Frontend
 
-This repository contains the frontend codebase for the Pana-African One Health Institute (PAOHI), built with React, TypeScript, and Vite.
+This repository contains the frontend codebase for the Pana-African One Health Institute (PAOHI), built with modern web development tools.
 
 ## Project Setup
 
@@ -34,3 +34,6 @@ This repository contains the frontend codebase for the Pana-African One Health I
 - **React**: For building the user interface.
 - **TypeScript**: For type safety and maintainable code.
 - **Vite**: A fast and modern development build tool.
+- **TailwindCSS**: For utility-first CSS styling.
+- **shadcn/ui**: For prebuilt components and design system.
+- **RTK Query**: For efficient and scalable data fetching and state management.
