@@ -1,15 +1,15 @@
 import CallToAction from './CallToAction';
 import Hero from './Hero';
-import OurServices from './WhatWeDo';
-import HowItWorks from './HowItWorks';
+import WhatWeDo from './WhatWeDo';
+import WhoWeAre from './WhoWeAre';
 
 const Home = () => {
   return (
-    <main className='pt-[2rem] pb-[5rem] space-y-[5rem] px-6 lg:px-0'>
+    <main className='pt-[2rem] px-6 lg:px-0'>
       <Hero />
-      <OurServices />
+      <WhoWeAre />
+      <WhatWeDo />
       <CallToAction />
-      <HowItWorks />
     </main>
   );
 };

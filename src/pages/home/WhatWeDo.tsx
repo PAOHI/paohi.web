@@ -12,7 +12,7 @@ const WhatWeDoCard = ({ title, description, className, icon: Icon, slug }: WhatW
   return (
     <Card
       onClick={handleClick}
-      className={`px-[3rem] py-[4rem] bg-primary/5 transition-colors h-fit border-none hover:cursor-pointer text-black ${className} transition-all duration-500 hover:-translate-y-3 shadow-md shadow-white rounded-3xl group`}
+      className={` px-[3rem] py-[4rem] bg-primary/5 transition-colors h-fit border-none hover:cursor-pointer text-black ${className} transition-all duration-500 hover:-translate-y-3 shadow-md shadow-white rounded-3xl group`}
     >
       <div className='mb-6'>
         <Icon className='w-10 h-10 ' strokeWidth={1.5} />
@@ -64,13 +64,11 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className='max-w-6xl mx-auto '>
+    <div className='max-w-6xl mx-auto my-[5rem]'>
       <div className='grid grid-cols-2 gap-10'>
         <div className='space-y-10'>
-          <h1 className='text-6xl font-[800] bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
-            What We
-            <br />
-            Do{' '}
+          <h1 className='text-4xl md:text-5xl font-serif bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+            What We <br /> <span className='italic'> Do </span>
           </h1>
           <WhatWeDoCard {...services[2]} className={services[2].hoverClass} />
           <WhatWeDoCard {...services[3]} className={services[3].hoverClass} />

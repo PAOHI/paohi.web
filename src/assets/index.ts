@@ -8,6 +8,8 @@ export { default as home2 } from './images/home2.jpg';
 export { default as home3 } from './images/home3.jpg';
 export { default as home4 } from './images/home4.jpg';
 export { default as home5 } from './images/home5.jpg';
+export { default as forest } from './images/forest.jpg';
+export { default as homeBgTexture } from './images/homeBgTexture.webp';
 
 export { default as mycoBriahLogo } from './images/mycoBriahLogo.png';
 export { default as urLogo } from './images/urLogo.png';

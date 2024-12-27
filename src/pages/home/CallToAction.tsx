@@ -39,13 +39,12 @@ const CallToAction = () => {
         </div>
         <div className='grid lg:grid-cols-2 gap-14 items-center'>
           <div className='space-y-6'>
-            <h2 className='text-4xl md:text-5xl font-extrabold flex items-center space-x-4 '>
-              <span className='bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
-                Partner <br />
-                with Us{' '}
-              </span>
+            <h1>
+              <h1 className='text-4xl md:text-5xl font-serif bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+                Partner <br /> <span className='italic'> with Us </span>
+              </h1>
               <span className='text-[5rem]'>🤝</span>
-            </h2>
+            </h1>
             <p className='text-lg text-gray-600'>
               Drive innovation in African healthcare through evidence-based solutions and integrated One Health
               approaches.
