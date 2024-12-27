@@ -1,47 +1,125 @@
-import { home1, home2, home3, home4, home5 } from '@/assets';
 import { MessagesSquare, Package2 } from 'lucide-react';
 
-export const navItems = [
+import {
+  home1,
+  home2,
+  home3,
+  home4,
+  home5,
+  find,
+  dtu,
+  universityOfCop,
+  erasmus,
+  africaResearchExcellence,
+  aims,
+  rbc,
+  insp,
+  aiim,
+  universityOfOxford,
+} from '../assets';
+
+export const navItems: NavItem[] = [
   {
-    label: 'Connect',
-    path: '/connect',
-    testId: 'nav-connect',
+    label: 'Home',
+    path: '/',
   },
   {
-    label: 'Collaborate',
-    path: '/collaborate',
-    testId: 'nav-collaborate',
+    label: 'Who We Are',
+    dropdownItems: [
+      { label: 'About Us', path: '/about-us' },
+      { label: 'Our Team', path: '/team' },
+      { label: 'Partners', path: '/partners' },
+    ],
   },
   {
-    label: 'Profession',
-    path: '/profession',
-    testId: 'nav-profession',
+    label: 'What We Do',
+    path: '/what-we-do',
+  },
+  { label: 'Our Approach', path: '/our-approach' },
+  {
+    label: 'Resources',
+    dropdownItems: [
+      { label: 'Publications', path: '/publications' },
+      { label: 'Research Papers', path: '/research-papers' },
+      { label: 'News', path: '/news' },
+    ],
   },
 ];
 
-// footer constants
-export const footerLinks = {
-  Company: [
-    { name: 'About Us', path: '/about', testId: 'about-link' },
-    { name: 'Careers', path: '/careers', testId: 'careers-link' },
-    { name: 'Contact', path: '/contact', testId: 'contact-link' },
+export const footerItems: FooterItem = {
+  resources: [
+    { label: 'Publications', path: '/publications' },
+    { label: 'Research Papers', path: '/research-papers' },
+    { label: 'News', path: '/news' },
   ],
-  Resources: [
-    { name: 'Blog', path: '/blog', testId: 'blog-link' },
-    { name: 'Success Stories', path: '/success-stories', testId: 'success-stories-link' },
-    { name: 'FAQs', path: '/faqs', testId: 'faqs-link' },
-  ],
-  Legal: [
-    { name: 'Privacy Policy', path: '/privacy', testId: 'privacy-link' },
-    { name: 'Terms of Service', path: '/terms', testId: 'terms-link' },
-    { name: 'Cookie Policy', path: '/cookies', testId: 'cookies-link' },
-  ],
-  Connect: [
-    { name: 'Twitter', path: 'https://twitter.com', testId: 'twitter-link', external: true },
-    { name: 'LinkedIn', path: 'https://linkedin.com', testId: 'linkedin-link', external: true },
-    { name: 'Instagram', path: 'https://instagram.com', testId: 'instagram-link', external: true },
+  quickLinks: [
+    { label: 'Get Involved', path: '/get-involved' },
+    { label: 'About Us', path: '/about-us' },
+    { label: 'Our Team', path: '/team' },
+    { label: 'Partners', path: '/partners' },
   ],
 };
+
+export const images = [
+  { id: 'home1', src: home1, alt: 'Healthcare professional', height: 'h-[140px] md:h-[180px] lg:h-[220px]' },
+  { id: 'home3', src: home3, alt: 'Veterinary care', height: 'h-[140px] md:h-[180px] lg:h-[220px]' },
+  { id: 'home2', src: home2, alt: 'Environmental research', height: 'h-[180px] md:h-[220px] lg:h-[280px]' },
+  { id: 'home4', src: home4, alt: 'Laboratory research', height: 'h-[120px] md:h-[150px] lg:h-[180px]' },
+  { id: 'home5', src: home5, alt: 'Community health worker', height: 'h-[260px] md:h-[320px] lg:h-[400px]' },
+];
+
+export const partners = [
+  {
+    name: 'University of Oxford - Global Health Network',
+    logo: universityOfOxford,
+    url: 'https://tghn.org/',
+  },
+  {
+    name: 'AIIm',
+    logo: aiim,
+    url: 'https://g.allm.net/',
+  },
+  {
+    name: 'INSP',
+    logo: insp,
+    url: '',
+  },
+  {
+    name: 'Rwanda Biomedical Centre',
+    logo: rbc,
+    url: 'https://rbc.gov.rw/',
+  },
+  {
+    name: 'African Institute for Mathematical Sciences',
+    logo: aims,
+    url: 'https://nexteinstein.org/',
+  },
+  {
+    name: 'Africa Research Excellence Fund',
+    logo: africaResearchExcellence,
+    url: 'https://africaresearchexcellencefund.org.uk/',
+  },
+  {
+    name: 'Erasmus MC',
+    logo: erasmus,
+    url: 'https://www.erasmusmc.nl/nl-nl/',
+  },
+  {
+    name: 'University of Copenhagen',
+    logo: universityOfCop,
+    url: 'https://www.ku.dk/english/',
+  },
+  {
+    name: 'Technical University of Denmark - DTU',
+    logo: dtu,
+    url: 'https://www.dtu.dk/english/',
+  },
+  {
+    name: 'Find',
+    logo: find,
+    url: 'https://www.finddx.org/',
+  },
+];
 
 // routes
 export const hideNavbarRoutes = ['/discover', '/account-creation-confirmation', '/email-verification'];
@@ -57,34 +135,6 @@ export const hideFooterRoutes = [
 
 // local storage constant
 export const CURRENCY_STORAGE_KEY = 'panafrica_preferredCurrency';
-
-export const images = [
-  {
-    src: { home1 },
-    alt: 'Professional with glasses',
-    className: 'col-span-1 row-span-1',
-  },
-  {
-    src: { home2 },
-    alt: 'Graduate in cap and gown',
-    className: 'col-span-1 row-span-1',
-  },
-  {
-    src: { home3 },
-    alt: 'Professional presenting',
-    className: 'col-span-1 row-span-1',
-  },
-  {
-    src: home4,
-    alt: 'Scientist at microscope',
-    className: 'col-span-1 row-span-1',
-  },
-  {
-    src: home5,
-    alt: 'Professional in white suit',
-    className: 'col-span-1 row-span-1',
-  },
-];
 
 export const navLinks = [
   { href: '/messages', label: 'Messages', icon: MessagesSquare },

@@ -1,71 +1,106 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
-import { footerLinks, hideFooterRoutes } from '@/constants';
+import { footerItems, hideFooterRoutes } from '@/constants';
+import { LinkedInIcon, TwitterIcon } from './SocialIcons';
+import { logo } from '@/assets';
 
 const Footer: React.FC = () => {
   const location = useLocation();
+  const currentYear = new Date().getFullYear();
 
-  // Helper function to determine if current route should hide footer
   const isRouteHidden = (path: string) => {
     return hideFooterRoutes.some(route => path.startsWith(route));
   };
 
-  // Don't render footer on certain routes
   if (isRouteHidden(location.pathname)) {
     return null;
   }
 
-  // Render footer link with proper handling for external links
-  const renderFooterLink = (link: { name: string; path: string; external?: boolean }) => {
-    if (link.external) {
-      return (
-        <li key={link.path}>
-          <a
-            href={link.path}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='text-mutedForeground hover:text-mutedForeground/70 transition-colors duration-200 text-sm'
-          >
-            {link.name}
-          </a>
-        </li>
-      );
-    }
-
-    return (
-      <li key={link.path}>
-        <Link
-          to={link.path}
-          className='text-mutedForeground hover:text-mutedForeground/70 transition-colors duration-200 text-sm'
-        >
-          {link.name}
-        </Link>
-      </li>
-    );
-  };
-
   return (
-    <footer className='w-full bg-primary text-muted pt-12'>
+    <footer className='w-full bg-primary/10 text-dark pt-12'>
       <div className='max-w-6xl mx-auto px-6'>
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className='space-y-4'>
-              <h3 className='font-semibold text-mutedForeground text-lg'>{category}</h3>
-              <ul className='space-y-2'>{links.map(link => renderFooterLink(link))}</ul>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-8 pb-8'>
+          {/* Logo and About Section */}
+          <div className='space-y-4'>
+            <Link to='/' className='block'>
+              <img src={logo} alt='PAOHI Logo' className='h-[100px] w-auto' />
+            </Link>
+            <p className='text-sm text-dark mt-4'>
+              Advancing One Health initiatives across Africa through research, education, and collaboration.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className='space-y-4'>
+            <h3 className='font-semibold text-dark text-lg'>Quick Links</h3>
+            <ul className='space-y-2'>
+              {footerItems.quickLinks.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className='text-sm text-dark hover:text-dark/70 transition-colors duration-200'>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className='space-y-4'>
+            <h3 className='font-semibold text-dark text-lg'>Resources</h3>
+            <ul className='space-y-2'>
+              {footerItems.resources.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className='text-sm text-dark hover:text-dark/70 transition-colors duration-200'>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Social */}
+          <div className='space-y-4'>
+            <h3 className='font-semibold text-dark text-lg'>Connect With Us</h3>
+            <div className='flex space-x-4'>
+              <a
+                href='https://twitter.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-dark hover:text-dark/70'
+              >
+                <TwitterIcon />
+              </a>
+              <a
+                href='https://linkedin.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-dark hover:text-dark/70'
+              >
+                <LinkedInIcon />
+              </a>
             </div>
-          ))}
+            <div className='space-y-2'>
+              <p className='text-sm text-dark'>Email: contact@paohi.org</p>
+              <p className='text-sm text-dark'>Phone: +46 76-775 28 04</p>
+            </div>
+          </div>
         </div>
 
-        <Separator className='my-8 bg-gray-800' />
+        <Separator className='my-8 bg-gradient-to-l from-primary via-secondary to-accent' />
 
-        <div className='flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0'>
-          <div className='text-sm text-mutedForeground '>
-            &copy; {new Date().getFullYear()} PANAFRICA BUSINESS INITIATIVE. All rights reserved.
+        {/* Bottom Section */}
+        <div className='py-6 text-center md:flex md:justify-between items-center'>
+          <div className='text-sm text-dark'>
+            &copy; {currentYear} Pan-African One Health Institute (PAOHI). All rights reserved.
+          </div>
+          <div className='mt-4 md:mt-0 space-x-4'>
+            <Link to='/privacy' className='text-sm text-dark hover:text-dark/70'>
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>
-      <div className='bg-custom-gradient h-2 mt-5'></div>
     </footer>
   );
 };

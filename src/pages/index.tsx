@@ -1,19 +1,44 @@
 import Home from './home';
-import Login from './auth/Login';
-import ResetPassword from './auth/ResetPassword';
-import ForgotPassword from './auth/ForgotPassword';
-import CreateAccount from './auth/CreateAccount';
+import AboutUs from './whoWeAre/aboutUs';
+import Team from './whoWeAre/team';
+import Partners from './whoWeAre/partners';
+import WhatWeDo from './whatWeDo';
+import OurApproach from './ourApproach';
+import Publications from './resources/publications';
+import ResearchPapers from './resources/researchPapers';
+import News from './resources/news';
+import Projects from './projects';
+import GetInvolved from './getInvolved';
 
 import NotFound from './notFound';
 
 // pages
 const HomePage: React.FC = () => <Home />;
-const LoginPage: React.FC = () => <Login />;
-const CreateAccountPage: React.FC = () => <CreateAccount />;
-const ForgotPasswordPage: React.FC = () => <ForgotPassword />;
-const ResetPasswordPage: React.FC = () => <ResetPassword />;
+const AboutUsPage: React.FC = () => <AboutUs />;
+const TeamPage: React.FC = () => <Team />;
+const PartnersPage: React.FC = () => <Partners />;
+const WhatWeDoPage: React.FC = () => <WhatWeDo />;
+const OurApproachPage: React.FC = () => <OurApproach />;
+const PublicationsPage: React.FC = () => <Publications />;
+const ResearchPapersPage: React.FC = () => <ResearchPapers />;
+const NewsPage: React.FC = () => <News />;
+const ProjectsPage: React.FC = () => <Projects />;
+const GetInvolvedPage: React.FC = () => <GetInvolved />;
 
 const NotFoundPage: React.FC = () => <NotFound />;
 
 // export
-export { HomePage, LoginPage, CreateAccountPage, ForgotPasswordPage, ResetPasswordPage, NotFoundPage };
+export {
+  HomePage,
+  AboutUsPage,
+  TeamPage,
+  PartnersPage,
+  WhatWeDoPage,
+  OurApproachPage,
+  PublicationsPage,
+  ResearchPapersPage,
+  NewsPage,
+  ProjectsPage,
+  GetInvolvedPage,
+  NotFoundPage,
+};

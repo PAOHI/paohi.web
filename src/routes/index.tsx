@@ -1,11 +1,31 @@
-import { HomePage, LoginPage, ForgotPasswordPage, ResetPasswordPage, CreateAccountPage, NotFoundPage } from '@/pages';
+import {
+  HomePage,
+  AboutUsPage,
+  TeamPage,
+  PartnersPage,
+  WhatWeDoPage,
+  OurApproachPage,
+  PublicationsPage,
+  ResearchPapersPage,
+  NewsPage,
+  ProjectsPage,
+  GetInvolvedPage,
+  NotFoundPage,
+} from '@/pages';
 
 const routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
-  { path: '/login', element: <LoginPage /> },
-  { path: '/create-account', element: <CreateAccountPage /> },
-  { path: '/forgot-password', element: <ForgotPasswordPage /> },
-  { path: '/reset-password/:resetToken', element: <ResetPasswordPage /> },
+  { path: '/about-us', element: <AboutUsPage /> },
+  { path: '/team', element: <TeamPage /> },
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/what-we-do', element: <WhatWeDoPage /> },
+  { path: '/our-approach', element: <OurApproachPage /> },
+  { path: '/publications', element: <PublicationsPage /> },
+  { path: '/research-papers', element: <ResearchPapersPage /> },
+  { path: '/news', element: <NewsPage /> },
+  { path: '/partners', element: <GetInvolvedPage /> },
+  { path: '/projects', element: <ProjectsPage /> },
+  { path: '/get-involved', element: <GetInvolvedPage /> },
   { path: '*', element: <NotFoundPage /> },
 ];
 
