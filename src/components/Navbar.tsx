@@ -239,7 +239,7 @@ const Navbar = () => {
         <div
           className={`
           flex flex-col items-start space-y-4 px-6 py-4
-          transform transition-all duration-500 bg-primary/10
+          transform transition-all duration-500 bg-[#fbf9fe]
           ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-4'}
         `}
         >
