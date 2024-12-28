@@ -5,7 +5,7 @@ import WhoWeAre from './WhoWeAre';
 
 const Home = () => {
   return (
-    <main className='pt-[2rem] px-6 lg:px-0'>
+    <main className='pt-[2rem]'>
       <Hero />
       <WhoWeAre />
       <WhatWeDo showTitle={true} />

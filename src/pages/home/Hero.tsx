@@ -100,7 +100,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='relative min-h-screen w-full flex items-start lg:items-center pt-20 lg:pt-0 overflow-hidden'>
+    <section className='relative min-h-screen w-full flex items-start lg:items-center pt-20 lg:pt-0 overflow-hidden px-6 lg:px-0'>
       <GlowingSVG />
       <div className='relative w-full max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 items-center'>
         {/* Rest of the component remains the same */}

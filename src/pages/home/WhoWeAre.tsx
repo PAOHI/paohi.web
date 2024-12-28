@@ -43,43 +43,40 @@ const WhoWeAre = () => {
   ];
 
   return (
-    <div className='relative bg-primary/20 py-24'>
+    <div className='relative bg-primary/20 py-12 md:py-24 mt-10 md:mt-0'>
       <div
         className='absolute inset-0 w-full bg-cover bg-center opacity-50 overflow-hidden'
         style={{ backgroundImage: `url(${homeBgTexture})` }}
       />
-      <main className='relative z-10 max-w-6xl mx-auto'>
+      <main className='relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-0'>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-12'>
-          <div className='space-y-4 lg:col-span-1'>
-            <h1 className='text-4xl md:text-5xl text-primary font-[800]'>
+          {/* Header Section */}
+          <div className='space-y-4 lg:col-span-1 text-center lg:text-left'>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl text-primary font-extrabold leading-tight'>
               Discover <br />
-              <span className=''>Who We Are</span>
+              <span>Who We Are</span>
             </h1>
-            <p className='text-gray-600 text-lg'>
+            <p className='text-gray-600 text-base sm:text-lg max-w-md mx-auto lg:mx-0'>
               Dedicated to advancing holistic wellbeing and sustainable socioeconomic progress in Africa.
             </p>
-            <div>
-              <Button>Read More</Button>
+            <div className='pt-2'>
+              <Button className='w-full sm:w-auto'>Read More</Button>
             </div>
           </div>
 
-          <div className='grid md:grid-cols-2 gap-x-2 gap-y-1 lg:col-span-2 justify-center'>
+          {/* Cards Grid */}
+          <div className='grid md:grid-cols-2 gap-x-2 gap-y-1 lg:col-span-2'>
             {cards.map((card, index) => (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-3xl ${card.className}`}
-                style={{
-                  height: 'fit-content',
-                }}
+                className={`group relative overflow-hidden rounded-3xl ${card.className} ${
+                  typeof card.description === 'string' ? 'h-fit md:h-[300px]' : 'auto'
+                }`}
               >
-                <div className={`absolute inset-0 bg-background`} />
-                <div
-                  className={`relative z-10 p-6 flex flex-col ${
-                    typeof card.description === 'string' ? 'md:h-[300px]' : ''
-                  }`}
-                >
-                  <h3 className='text-dark text-2xl font-bold mb-3 leading-normal tracking-normal '>{card.title}</h3>
-                  <div className='text-dark/70 '>
+                <div className='absolute inset-0 bg-background'></div>
+                <div className='relative z-10 flex flex-col h-full p-6'>
+                  <h3 className='text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-dark'>{card.title}</h3>
+                  <div className='text-dark/70 text-sm sm:text-base'>
                     {typeof card.description === 'string' ? <p>{card.description}</p> : card.description}
                   </div>
                 </div>

@@ -22,8 +22,8 @@ const Loader = () => {
   if (!isLoading) return null;
 
   return (
-    <div className='fixed inset-0 bg-white z-50 flex  items-center justify-center gap-4'>
-      <Loader2 size={40} className='animate-spin text-primary' />
+    <div className='flex items-center justify-center h-screen'>
+      <Loader2 className='h-12 w-12 animate-spin text-primary' />
     </div>
   );
 };

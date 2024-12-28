@@ -20,9 +20,10 @@ const Footer: React.FC = () => {
   return (
     <footer className='w-full bg-primary/10 text-dark pt-12'>
       <div className='max-w-6xl mx-auto px-6'>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-8 pb-8'>
-          {/* Logo and About Section */}
-          <div className='space-y-4'>
+        {/* Main Content */}
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-8 pb-8'>
+          {/* Logo and About Section - Full width on mobile */}
+          <div className='col-span-2 md:col-span-1 space-y-4'>
             <Link to='/' className='block'>
               <img src={logo} alt='PAOHI Logo' className='h-[100px] w-auto' />
             </Link>
@@ -59,8 +60,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact & Social */}
-          <div className='space-y-4'>
+          {/* Contact & Social - Full width on mobile */}
+          <div className='col-span-2 md:col-span-1 space-y-4'>
             <h3 className='font-semibold text-dark text-lg'>Connect With Us</h3>
             <div className='flex space-x-4'>
               <a
@@ -89,12 +90,12 @@ const Footer: React.FC = () => {
 
         <Separator className='my-8 bg-primary' />
 
-        {/* Bottom Section */}
-        <div className='py-6 text-center md:flex md:justify-between items-center'>
-          <div className='text-sm text-dark'>
+        {/* Bottom Section - Stack on mobile */}
+        <div className='py-6 flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0'>
+          <div className='text-sm text-dark order-2 md:order-1'>
             &copy; {currentYear} Pan-African One Health Institute (PAOHI). All rights reserved.
           </div>
-          <div className='mt-4 md:mt-0 space-x-4'>
+          <div className='order-1 md:order-2'>
             <Link to='/privacy' className='text-sm text-dark hover:text-dark/70'>
               Privacy Policy
             </Link>
