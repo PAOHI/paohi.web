@@ -257,7 +257,7 @@ const Navbar = () => {
 
           <div
             className={`
-            w-full pt-2 border-t border-gray-100 transform transition-all duration-500 delay-[${
+            w-full pt-2 border-t border-muted/40 transform transition-all duration-500 delay-[${
               navItems.length * 100
             }ms]
             ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}
