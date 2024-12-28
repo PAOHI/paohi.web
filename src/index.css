@@ -13,23 +13,28 @@
   }
 }
 
-html {
-  scroll-behavior: smooth !important;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  @apply font-body bg-background;
-}
+  body {
+    @apply font-body bg-background antialiased;
+  }
 
-h1,
-h2,
-h3 {
-  @apply font-heading text-dark;
+  h1,
+  h2,
+  h3 {
+    @apply font-heading text-dark antialiased;
+  }
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

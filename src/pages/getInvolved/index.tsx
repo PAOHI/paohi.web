@@ -63,23 +63,23 @@ const GetInvolved: React.FC<GetInvolvedProps> = ({ onSubmitSuccess, initialValue
 
       {/* Engagement Options */}
       <div className='max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8'>
-        <div className='p-6 border rounded-lg'>
+        <div className='p-6 border-[1px] border-muted/20 bg-white/10 rounded-2xl'>
           <HandHeart className='w-12 h-12 text-primary mb-4' />
           <h3 className='text-xl font-[800] mb-2'>Volunteer</h3>
           <p>Join our field projects and contribute to community health initiatives</p>
-          <p className='text-sm text-muted-foreground'>Make a direct impact in communities</p>
+          <p className='text-sm text-muted'>Make a direct impact in communities</p>
         </div>
-        <div className='p-6 border rounded-lg'>
+        <div className='p-6 border-[1px] border-muted/20 bg-white/10 rounded-2xl'>
           <GraduationCap className='w-12 h-12 text-primary mb-4' />
           <h3 className='text-xl font-[800] mb-2'>Research</h3>
           <p>Participate in One Health research and development projects</p>
-          <p className='text-sm text-muted-foreground'>Contribute to evidence-based solutions</p>
+          <p className='text-sm text-muted'>Contribute to evidence-based solutions</p>
         </div>
-        <div className='p-6 border rounded-lg'>
+        <div className='p-6 border-[1px] border-muted/20 bg-white/10 rounded-2xl'>
           <Users className='w-12 h-12 text-primary mb-4' />
           <h3 className='text-xl font-[800] mb-2'>Partnership</h3>
           <p>Collaborate with us on One Health initiatives</p>
-          <p className='text-sm text-muted-foreground'>Join our network of partners</p>
+          <p className='text-sm text-muted'>Join our network of partners</p>
         </div>
       </div>
 
@@ -88,21 +88,21 @@ const GetInvolved: React.FC<GetInvolvedProps> = ({ onSubmitSuccess, initialValue
         <h2 className='text-3xl font-[800] mb-8'>Areas of Engagement</h2>
         <Accordion type='single' collapsible>
           <AccordionItem value='research'>
-            <AccordionTrigger>One Health Research & Development</AccordionTrigger>
+            <AccordionTrigger className='text-lg'>One Health Research & Development</AccordionTrigger>
             <AccordionContent>
               Participate in innovative research projects that integrate human, animal, and environmental health. We
               conduct transdisciplinary scientific research to guide evidence-based policymaking and implementation.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value='capacity'>
-            <AccordionTrigger>Capacity Building</AccordionTrigger>
+            <AccordionTrigger className='text-lg'>Capacity Building</AccordionTrigger>
             <AccordionContent>
               Join our training programs aimed at strengthening institutional and regional capacity in scientific and
               implementation health research. Help build the next generation of One Health leaders.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value='technical'>
-            <AccordionTrigger>Technical Support</AccordionTrigger>
+            <AccordionTrigger className='text-lg'>Technical Support</AccordionTrigger>
             <AccordionContent>
               Provide expertise in situation analysis, risk assessment, and implementation of One Health strategies at
               regional, national, and subnational levels.
@@ -215,5 +215,6 @@ const GetInvolved: React.FC<GetInvolvedProps> = ({ onSubmitSuccess, initialValue
     </div>
   );
 };
+
 
 export default GetInvolved;

@@ -6,6 +6,7 @@ import AuthGuard from './authGuard';
 import { getNetworkStatus } from './lib/utils';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 const App = () => {
   const [isOnline, setIsOnline] = useState(getNetworkStatus());
@@ -47,19 +48,22 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Navbar />
-      <Routes>
-        {routes.map(route =>
-          route.authRequired ? (
-            <Route key={route.path} path={route.path} element={<AuthGuard />}>
-              <Route path={route.path} element={route.element} />
-            </Route>
-          ) : (
-            <Route key={route.path} path={route.path} element={route.element} />
-          )
-        )}
-      </Routes>
-      <Footer />
+      <Loader />
+      <div className='antialiased'>
+        <Navbar />
+        <Routes>
+          {routes.map(route =>
+            route.authRequired ? (
+              <Route key={route.path} path={route.path} element={<AuthGuard />}>
+                <Route path={route.path} element={route.element} />
+              </Route>
+            ) : (
+              <Route key={route.path} path={route.path} element={route.element} />
+            )
+          )}
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 };
