@@ -29,7 +29,7 @@ const GetInvolved: React.FC<GetInvolvedProps> = ({ onSubmitSuccess, initialValue
     <div className='min-h-screen bg-primary/5 '>
       {/* Rest of the component remains the same */}
       {/* Hero Section */}
-      <div className='relative bg-primary/10 py-16 pt-[10rem]'>
+      <div className='relative bg-primary/10 py-16  pt-[6.5rem] md:pt-[10rem]'>
         <div className='max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center'>
           <div>
             <h1 className='text-4xl font-[800] mb-4'>Join Our Mission</h1>

@@ -31,7 +31,7 @@ const WhatWeDoPage = () => {
         <div className='max-w-6xl mx-auto px-4 py-20'>
           {/* Section Header */}
           <div className='text-center mb-16'>
-            <h2 className='text-4xl md:text-5xl text-primary mb-6'>
+            <h2 className='text-4xl md:text-5xl text-primary font-[800] mb-6'>
               What We <span className='italic'>Do</span>
             </h2>
             <p className='text-xl text-gray-600 max-w-2xl mx-auto'>

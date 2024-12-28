@@ -85,7 +85,7 @@ const WhoWeAre = () => {
     <main className='relative bg-primary/10'>
       {/* Hero Section */}
 
-      <div className='relative pt-[12rem] pb-32'>
+      <div className='relative pt-[6rem] md:pt-[12rem] pb-32'>
         <div className='max-w-6xl mx-auto px-4'>
           <div className='grid md:grid-cols-2 gap-8 items-center'>
             <div className='relative w-full h-96 rounded-lg overflow-hidden'>
