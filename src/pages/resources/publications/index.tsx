@@ -20,7 +20,7 @@ const Publications = () => {
         />
 
         <div className='max-w-3xl mx-auto text-center mt-20 z-10'>
-          <h1 className='text-4xl md:text-5xl font-serif mb-4 bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+          <h1 className='text-4xl md:text-5xl font-serif mb-4 text-primary'>
             Advancing Knowledge: <span className='italic'>Insights Through Publications</span>
           </h1>
 

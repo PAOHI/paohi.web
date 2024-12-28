@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <Separator className='my-8 bg-gradient-to-l from-primary via-secondary to-accent' />
+        <Separator className='my-8 bg-primary' />
 
         {/* Bottom Section */}
         <div className='py-6 text-center md:flex md:justify-between items-center'>

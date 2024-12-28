@@ -1,7 +1,7 @@
 import { homeBgTexture } from '@/assets';
 import { Button } from '@/components/ui/button';
 
-const JourneySection = () => {
+const WhoWeAre = () => {
   const cards = [
     {
       title: 'Our Mission',
@@ -43,7 +43,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <div className='relative bg-accent/5 py-24'>
+    <div className='relative bg-primary/5 py-24'>
       <div
         className='absolute inset-0 w-full bg-cover bg-center opacity-50 overflow-hidden'
         style={{ backgroundImage: `url(${homeBgTexture})` }}
@@ -51,9 +51,9 @@ const JourneySection = () => {
       <main className='relative z-10 max-w-6xl mx-auto'>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-12'>
           <div className='space-y-4 lg:col-span-1'>
-            <h1 className='text-4xl md:text-5xl font-serif bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+            <h1 className='text-4xl md:text-5xl text-primary font-[800]'>
               Discover <br />
-              <span className='italic'>Who We Are</span>
+              <span className=''>Who We Are</span>
             </h1>
             <p className='text-gray-600 text-lg'>
               Dedicated to advancing holistic wellbeing and sustainable socioeconomic progress in Africa.
@@ -92,4 +92,4 @@ const JourneySection = () => {
   );
 };
 
-export default JourneySection;
+export default WhoWeAre;

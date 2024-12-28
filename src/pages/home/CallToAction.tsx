@@ -39,9 +39,9 @@ const CallToAction = () => {
         </div>
         <div className='grid lg:grid-cols-2 gap-14 items-center'>
           <div className='space-y-6'>
-            <h1>
-              <h1 className='text-4xl md:text-5xl font-serif bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
-                Partner <br /> <span className='italic'> with Us </span>
+            <h1 className='flex'>
+              <h1 className='text-4xl md:text-5xl text-primary font-[700]'>
+                Partner <br /> <span>with Us</span>
               </h1>
               <span className='text-[5rem]'>🤝</span>
             </h1>
@@ -86,9 +86,7 @@ const CallToAction = () => {
           </div>
         </div>
         <div className='mt-16 text-center'>
-          <p className='text-gray-600 mb-8 text-lg font-semibold bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'>
-            In Partnership with:
-          </p>
+          <p className=' mb-8 text-lg font-semibold text-primary'>In Partnership with:</p>
           <div className='flex flex-wrap justify-center items-center gap-12 max-w-5xl mx-auto'>
             {partners.map((partner, index) => (
               <a

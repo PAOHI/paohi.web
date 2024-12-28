@@ -38,15 +38,7 @@ const Dropdown = ({
         }`}
       >
         <span className='inline-block'>
-          <span
-            className={
-              isActiveDropdown
-                ? 'bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'
-                : ''
-            }
-          >
-            {item.label}
-          </span>
+          <span className={isActiveDropdown ? 'text-primary' : ''}>{item.label}</span>
         </span>
         <ChevronDown className={`h-4 w-4 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
@@ -83,15 +75,7 @@ const Dropdown = ({
               onItemClick?.();
             }}
           >
-            <span
-              className={
-                location.pathname === dropdownItem.path
-                  ? 'bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'
-                  : ''
-              }
-            >
-              {dropdownItem.label}
-            </span>
+            <span className={location.pathname === dropdownItem.path ? 'text-primary' : ''}>{dropdownItem.label}</span>
           </Link>
         ))}
       </div>
@@ -153,11 +137,7 @@ const Navbar = () => {
         to={item.path}
         className={`
           text-base font-medium transition-all duration-500 
-          ${
-            location.pathname === item.path
-              ? 'bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'
-              : 'text-gray-700 hover:text-primary'
-          }
+          ${location.pathname === item.path ? 'text-primary' : 'text-gray-700 hover:text-primary'}
           ${isMobile ? 'w-full py-2' : ''}
         `}
         onClick={() => isMobile && setIsMobileMenuOpen(false)}
@@ -194,15 +174,7 @@ const Navbar = () => {
               location.pathname === '/projects' ? 'text-primary' : 'text-gray-700 hover:text-primary'
             }`}
           >
-            <span
-              className={
-                location.pathname === '/projects'
-                  ? 'bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'
-                  : ''
-              }
-            >
-              Projects
-            </span>
+            <span className={location.pathname === '/projects' ? 'text-primary' : ''}>Projects</span>
             <ArrowRight size={20} className='ml-1 group-hover:translate-x-[3px] transition-all duration-500' />
           </Link>
 
@@ -232,15 +204,7 @@ const Navbar = () => {
               }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <span
-                className={
-                  location.pathname === '/projects'
-                    ? 'bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text'
-                    : ''
-                }
-              >
-                Projects
-              </span>
+              <span className={location.pathname === '/projects' ? 'text-primary' : ''}>Projects</span>
 
               <ArrowRight size={20} className='ml-1 group-hover:translate-x-[3px] transition-all duration-500' />
             </Link>

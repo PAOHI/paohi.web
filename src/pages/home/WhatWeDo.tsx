@@ -27,7 +27,7 @@ const WhatWeDoCard = ({ title, description, className, icon: Icon, slug }: WhatW
   );
 };
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ showTitle }: { showTitle: boolean }) => {
   const services = [
     {
       title: 'Situation Analysis',
@@ -67,9 +67,11 @@ const WhatWeDo = () => {
     <div className='max-w-6xl mx-auto my-[5rem]'>
       <div className='grid grid-cols-2 gap-10'>
         <div className='space-y-10'>
-          <h1 className='text-4xl md:text-5xl font-serif bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
-            What We <br /> <span className='italic'> Do </span>
-          </h1>
+          {showTitle && (
+            <h1 className='text-4xl md:text-5xl text-primary font-[800]'>
+              What We <br /> Do
+            </h1>
+          )}
           <WhatWeDoCard {...services[2]} className={services[2].hoverClass} />
           <WhatWeDoCard {...services[3]} className={services[3].hoverClass} />
         </div>

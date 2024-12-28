@@ -45,3 +45,31 @@ interface WhatWeDoCardProps {
   icon: React.ElementType;
   slug: string;
 }
+
+interface CardType {
+  title: string;
+  description: string | JSX.Element;
+  className?: string;
+}
+
+interface TeamMemberType {
+  image: string;
+  name: string;
+  role: string;
+}
+
+// Types and Interfaces
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  profession: string;
+  interest: string;
+  message: string;
+}
+
+// Component Props (if needed to make the component more reusable)
+interface GetInvolvedProps {
+  onSubmitSuccess?: (data: FormData) => void;
+  initialValues?: Partial<FormData>;
+}

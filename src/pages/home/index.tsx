@@ -8,7 +8,7 @@ const Home = () => {
     <main className='pt-[2rem] px-6 lg:px-0'>
       <Hero />
       <WhoWeAre />
-      <WhatWeDo />
+      <WhatWeDo showTitle={true} />
       <CallToAction />
     </main>
   );

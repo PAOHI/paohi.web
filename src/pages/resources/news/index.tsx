@@ -46,7 +46,7 @@ const News = () => {
         </div>
 
         <div className='max-w-3xl mx-auto text-center mt-20 z-10 px-4'>
-          <h1 className='text-4xl md:text-5xl font-serif mb-4 bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+          <h1 className='text-4xl md:text-5xl font-serif mb-4 text-primary'>
             Global Health Updates: <span className='italic'>One Health, One World</span>
           </h1>
 

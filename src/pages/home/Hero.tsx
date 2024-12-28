@@ -105,7 +105,7 @@ const Hero = () => {
       <div className='relative w-full max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 items-center'>
         {/* Rest of the component remains the same */}
         <div className='space-y-6 text-center lg:text-left'>
-          <h1 className='text-3xl md:text-4xl lg:text-5xl font-[800] leading-[1.5] bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+          <h1 className='text-3xl md:text-4xl lg:text-5xl font-[800] leading-[1.5] text-primary'>
             Advancing One Health
             <br />
             for a Healthier

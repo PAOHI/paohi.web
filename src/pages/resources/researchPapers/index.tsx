@@ -16,7 +16,7 @@ const ResearchPapers = () => {
 
   return (
     <div className='min-h-screen w-full'>
-      {/* Hero Section with gradient background */}
+      {/* Hero Section with background */}
       <div className='relative w-full'>
         <div className='w-full h-[70vh] flex items-center justify-center px-4 py-16 bg-secondary/10 relative overflow-hidden'>
           {/* Decorative elements */}
@@ -30,7 +30,7 @@ const ResearchPapers = () => {
           </div>
 
           <div className='max-w-3xl mx-auto text-center z-10'>
-            <h1 className='text-4xl md:text-5xl font-serif mb-4 bg-gradient-to-b from-primary to-accent inline-block text-transparent bg-clip-text'>
+            <h1 className='text-4xl md:text-5xl font-serif mb-4 text-primary'>
               Advancing <em className='font-medium'>One Health</em> Through Research
             </h1>
 

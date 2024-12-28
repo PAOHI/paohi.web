@@ -12,6 +12,7 @@ export { default as forest } from './images/forest.jpg';
 export { default as homeBgTexture } from './images/homeBgTexture.webp';
 export { default as publicationPatern } from './images/publicationPatern.webp';
 export { default as research } from './images/research.jpg';
+export { default as join } from './images/join.jpg';
 
 export { default as mycoBriahLogo } from './images/mycoBriahLogo.png';
 export { default as urLogo } from './images/urLogo.png';
@@ -26,3 +27,5 @@ export { default as rbc } from './images/rbc.png';
 export { default as insp } from './images/insp.jpg';
 export { default as aiim } from './images/aiim.png';
 export { default as universityOfOxford } from './images/universityOfOxford.png';
+
+export { default as john } from './images/john.jpg';
