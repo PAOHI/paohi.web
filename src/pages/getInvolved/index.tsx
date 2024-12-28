@@ -216,5 +216,4 @@ const GetInvolved: React.FC<GetInvolvedProps> = ({ onSubmitSuccess, initialValue
   );
 };
 
-
 export default GetInvolved;

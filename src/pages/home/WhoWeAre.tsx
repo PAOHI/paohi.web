@@ -43,7 +43,7 @@ const WhoWeAre = () => {
   ];
 
   return (
-    <div className='relative bg-primary/5 py-24'>
+    <div className='relative bg-primary/20 py-24'>
       <div
         className='absolute inset-0 w-full bg-cover bg-center opacity-50 overflow-hidden'
         style={{ backgroundImage: `url(${homeBgTexture})` }}

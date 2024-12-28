@@ -19,7 +19,7 @@ const CallToAction = () => {
 
   return (
     <section
-      className='py-[20vh] bg-[#f8f6f3] relative'
+      className='py-[20vh] bg-primary/5 relative'
       style={{
         backgroundImage: "url('wave.webp')",
         backgroundPosition: 'center',
