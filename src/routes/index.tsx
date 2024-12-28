@@ -1,8 +1,6 @@
 import {
   HomePage,
-  AboutUsPage,
-  TeamPage,
-  PartnersPage,
+  WhoWeArePage,
   WhatWeDoPage,
   OurApproachPage,
   PublicationsPage,
@@ -15,9 +13,7 @@ import {
 
 const routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
-  { path: '/about-us', element: <AboutUsPage /> },
-  { path: '/team', element: <TeamPage /> },
-  { path: '/partners', element: <PartnersPage /> },
+  { path: '/who-we-are', element: <WhoWeArePage /> },
   { path: '/what-we-do', element: <WhatWeDoPage /> },
   { path: '/our-approach', element: <OurApproachPage /> },
   { path: '/publications', element: <PublicationsPage /> },

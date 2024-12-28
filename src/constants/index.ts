@@ -25,11 +25,7 @@ export const navItems: NavItem[] = [
   },
   {
     label: 'Who We Are',
-    dropdownItems: [
-      { label: 'About Us', path: '/about-us' },
-      { label: 'Our Team', path: '/team' },
-      { label: 'Partners', path: '/partners' },
-    ],
+    path: '/who-we-are',
   },
   {
     label: 'What We Do',

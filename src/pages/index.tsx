@@ -1,7 +1,5 @@
 import Home from './home';
-import AboutUs from './whoWeAre/aboutUs';
-import Team from './whoWeAre/team';
-import Partners from './whoWeAre/partners';
+import WhoWeAre from './whoWeAre';
 import WhatWeDo from './whatWeDo';
 import OurApproach from './ourApproach';
 import Publications from './resources/publications';
@@ -14,9 +12,7 @@ import NotFound from './notFound';
 
 // pages
 const HomePage: React.FC = () => <Home />;
-const AboutUsPage: React.FC = () => <AboutUs />;
-const TeamPage: React.FC = () => <Team />;
-const PartnersPage: React.FC = () => <Partners />;
+const WhoWeArePage: React.FC = () => <WhoWeAre />;
 const WhatWeDoPage: React.FC = () => <WhatWeDo />;
 const OurApproachPage: React.FC = () => <OurApproach />;
 const PublicationsPage: React.FC = () => <Publications />;
@@ -30,9 +26,7 @@ const NotFoundPage: React.FC = () => <NotFound />;
 // export
 export {
   HomePage,
-  AboutUsPage,
-  TeamPage,
-  PartnersPage,
+  WhoWeArePage,
   WhatWeDoPage,
   OurApproachPage,
   PublicationsPage,

@@ -18,7 +18,7 @@ const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps
   }, [src, imageId, onLoad]);
 
   return (
-    <Card className={`overflow-hidden bg-primary/10 rounded-xl lg:rounded-3xl border-none ${className}`}>
+    <Card className={`overflow-hidden bg-primary/10 rounded-xl lg:rounded-3xl border-none shadow-none ${className}`}>
       <div className='relative w-full h-full'>
         {isImageLoading && <div className='absolute inset-0 bg-gray-200 animate-pulse' aria-hidden='true' />}
         <img

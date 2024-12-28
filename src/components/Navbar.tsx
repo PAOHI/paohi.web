@@ -175,7 +175,7 @@ const Navbar = () => {
         fixed left-0 right-0 z-50 
         transition-all duration-500 backdrop-blur-md
         ${isHidden ? '-translate-y-full' : 'translate-y-0'}
-        ${isSticky ? 'bg-white/10' : 'bg-background'}
+        ${isSticky ? 'bg-white/10' : 'bg-white/10'}
       `}
     >
       <div className='max-w-6xl mx-auto flex items-center justify-between px-6 lg:px-0'>
