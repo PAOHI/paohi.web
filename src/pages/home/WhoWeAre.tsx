@@ -65,7 +65,7 @@ const WhoWeAre = () => {
           </div>
 
           {/* Cards Grid */}
-          <div className='grid md:grid-cols-2 gap-x-2 gap-y-1 lg:col-span-2'>
+          <div className='grid md:grid-cols-2 md:gap-x-[0.8vw] gap-y-[3vw] md:gap-y-[0.4vw] lg:col-span-2'>
             {cards.map((card, index) => (
               <div
                 key={index}
@@ -76,7 +76,7 @@ const WhoWeAre = () => {
                 <div className='absolute inset-0 bg-background'></div>
                 <div className='relative z-10 flex flex-col h-full p-6'>
                   <h3 className='text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-dark'>{card.title}</h3>
-                  <div className='text-dark/70 text-sm sm:text-base'>
+                  <div className='text-dark/70 text-base lg:text-lg'>
                     {typeof card.description === 'string' ? <p>{card.description}</p> : card.description}
                   </div>
                 </div>
