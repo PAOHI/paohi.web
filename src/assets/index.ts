@@ -13,6 +13,10 @@ export { default as homeBgTexture } from './images/homeBgTexture.webp';
 export { default as publicationPatern } from './images/publicationPatern.webp';
 export { default as research } from './images/research.jpg';
 export { default as join } from './images/join.jpg';
+export { default as oneHealth } from './images/oneHealth.png';
+export { default as researcher } from './images/researcher.avif';
+export { default as community } from './images/community.webp';
+export { default as training } from './images/training.jpg';
 
 export { default as mycoBriahLogo } from './images/mycoBriahLogo.png';
 export { default as urLogo } from './images/urLogo.png';

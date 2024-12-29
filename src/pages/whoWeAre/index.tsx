@@ -1,6 +1,7 @@
 import { home3, john } from '@/assets';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useNavigate } from 'react-router-dom';
 
 // Content Data
 const cards: CardType[] = [
@@ -81,6 +82,7 @@ const TeamGrid = ({ members }: { members: TeamMemberType[] }) => (
 );
 
 const WhoWeAre = () => {
+  const navigate = useNavigate();
   return (
     <main className='relative bg-primary/10'>
       {/* Hero Section */}
@@ -99,7 +101,9 @@ const WhoWeAre = () => {
                 environment. Our mission drives impactful work and collaboration across sectors to foster socioeconomic
                 stability and growth.
               </p>
-              <Button variant='default'>Our Approach</Button>
+              <Button variant='default' onClick={() => navigate('/our-approach')}>
+                Our Approach
+              </Button>
             </div>
           </div>
         </div>
