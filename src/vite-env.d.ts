@@ -29,15 +29,6 @@ interface ImageLoadState {
   [key: string]: boolean;
 }
 
-interface ImageCardProps {
-  src: string;
-  alt: string;
-  className?: string;
-  imageId: string;
-  onLoad: (imageId: string) => void;
-  isLoaded: boolean;
-}
-
 interface WhatWeDoCardProps {
   title: string;
   description: string;
@@ -72,4 +63,12 @@ interface FormData {
 interface GetInvolvedProps {
   onSubmitSuccess?: (data: FormData) => void;
   initialValues?: Partial<FormData>;
+}
+
+interface ImageCardProps {
+  src: string;
+  alt: string;
+  className: string;
+  imageId: string;
+  onLoad: (imageId: string) => void;
 }

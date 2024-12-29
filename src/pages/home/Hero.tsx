@@ -5,8 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { images } from '@/constants';
 
+interface ImageData {
+  id: string;
+  src: string;
+  alt: string;
+  height: string;
+}
+
 const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps) => {
-  const [isImageLoading, setIsImageLoading] = useState(true);
+  const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const img = new Image();
@@ -14,6 +21,10 @@ const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps
     img.onload = () => {
       setIsImageLoading(false);
       onLoad(imageId);
+    };
+
+    return () => {
+      img.onload = null;
     };
   }, [src, imageId, onLoad]);
 
@@ -25,6 +36,7 @@ const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps
           src={src}
           alt={alt}
           loading='lazy'
+          decoding='async'
           className={`w-full h-full object-cover transition-all duration-700 ${
             isImageLoading ? 'opacity-0' : 'opacity-100'
           }`}
@@ -36,15 +48,16 @@ const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps
 
 ImageCard.displayName = 'ImageCard';
 
-const GlowingSVG = () => (
+const GlowingSVG = memo(() => (
   <div className='absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none'>
     <svg
-      width='876'
-      height='917'
+      width='100%'
+      height='100%'
       viewBox='0 0 876 917'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-screen animate-pulse'
+      aria-hidden='true'
     >
       <g filter='url(#filter0_f_74_42543)'>
         <circle cx='528' cy='528' r='128' fill='#A359A0' fillOpacity='0.8'>
@@ -86,24 +99,23 @@ const GlowingSVG = () => (
       </defs>
     </svg>
   </div>
-);
+));
 
-const Hero = () => {
+GlowingSVG.displayName = 'GlowingSVG';
+
+const Hero: React.FC = () => {
   const navigate = useNavigate();
-  const [imagesLoaded, setImagesLoaded] = useState<ImageLoadState>({});
 
-  const handleImageLoad = useCallback((imageId: string) => {
-    setImagesLoaded(prev => ({
-      ...prev,
-      [imageId]: true,
-    }));
+  const handleImageLoad = useCallback((imageId: string): void => {
+    // If we need to track loading status in the future,
+    // we can reimplement the state here
+    console.debug(`Image loaded: ${imageId}`);
   }, []);
 
   return (
-    <section className='relative min-h-screen w-full flex items-start lg:items-center pt-20 lg:pt-0 overflow-hidden px-6 lg:px-0'>
+    <section className='relative min-h-screen w-full flex items-start lg:items-center pt-[10vh] md:pt-[5vh] lg:pt-0 overflow-hidden px-6 lg:px-0'>
       <GlowingSVG />
       <div className='relative w-full max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-20 items-center'>
-        {/* Rest of the component remains the same */}
         <div className='space-y-6 text-center lg:text-left'>
           <h1 className='text-3xl md:text-4xl lg:text-5xl font-[800] leading-[1.5] text-primary'>
             Advancing One Health
@@ -133,9 +145,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='relative w-full h-[400px] md:h-[500px] lg:h-[600px]'>
-          <div className='absolute left-0 bottom-0 w-[32%] flex flex-col gap-2 lg:gap-4'>
-            {images.slice(0, 2).map(img => (
+        <div className='relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh]'>
+          <div className='absolute left-0 bottom-0 w-[32%] flex flex-col gap-[2vh] lg:gap-[3vh]'>
+            {images.slice(0, 2).map((img: ImageData) => (
               <ImageCard
                 key={img.id}
                 src={img.src}
@@ -143,13 +155,12 @@ const Hero = () => {
                 className={img.height}
                 imageId={img.id}
                 onLoad={handleImageLoad}
-                isLoaded={!!imagesLoaded[img.id]}
               />
             ))}
           </div>
 
-          <div className='absolute left-[34%] top-0 w-[32%] flex flex-col gap-2 lg:gap-4'>
-            {images.slice(2, 4).map(img => (
+          <div className='absolute left-[34%] top-0 w-[32%] flex flex-col gap-[2vh] lg:gap-[3vh]'>
+            {images.slice(2, 4).map((img: ImageData) => (
               <ImageCard
                 key={img.id}
                 src={img.src}
@@ -157,7 +168,6 @@ const Hero = () => {
                 className={img.height}
                 imageId={img.id}
                 onLoad={handleImageLoad}
-                isLoaded={!!imagesLoaded[img.id]}
               />
             ))}
           </div>
@@ -169,7 +179,6 @@ const Hero = () => {
               className={images[4].height}
               imageId={images[4].id}
               onLoad={handleImageLoad}
-              isLoaded={!!imagesLoaded[images[4].id]}
             />
           </div>
         </div>

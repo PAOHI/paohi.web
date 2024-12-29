@@ -1,36 +1,68 @@
 import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
-import { ArrowRight, BookOpen, GraduationCap, LineChart, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, GraduationCap, LineChart, Users, LucideIcon } from 'lucide-react';
+
+interface WhatWeDoCardProps {
+  title: string;
+  description: string;
+  className?: string;
+  icon: LucideIcon;
+  slug: string;
+}
+
+interface Service extends WhatWeDoCardProps {
+  hoverClass: string;
+}
 
 const WhatWeDoCard = ({ title, description, className, icon: Icon, slug }: WhatWeDoCardProps) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     navigate(`/services/${slug}`);
   };
 
   return (
     <Card
       onClick={handleClick}
-      className={`px-4 sm:px-8 lg:px-[3rem] py-6 sm:py-8 lg:py-[4rem] bg-primary/5 transition-colors h-fit border-none hover:cursor-pointer text-black ${className} lg:transition-all lg:duration-500 lg:hover:-translate-y-3 shadow-md shadow-white rounded-3xl group`}
+      className={`
+        p-[4vw] sm:p-[3vw] lg:p-[2rem] 
+        bg-primary/5 
+        transition-colors 
+        h-fit 
+        border-none 
+        hover:cursor-pointer 
+        text-black 
+        ${className} 
+        lg:transition-all 
+        lg:duration-500 
+        lg:hover:-translate-y-3 
+        shadow-md 
+        shadow-white 
+        rounded-3xl 
+        group
+      `}
     >
-      <div className='mb-4 lg:mb-6 '>
-        <Icon className='w-8 h-8 lg:w-10 lg:h-10' strokeWidth={1.5} />
+      <div className='mb-[3vh] lg:mb-[2vh]'>
+        <Icon className='w-[2rem] h-[2rem] lg:w-[2.5rem] lg:h-[2.5rem]' strokeWidth={1.5} />
       </div>
-      <h2 className='text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4 '>{title}</h2>
-      <p className='text-base lg:text-lg '>{description}</p>
-      <div className='mt-4 lg:mt-6 flex items-center '>
+      <h2 className='text-xl sm:text-2xl lg:text-3xl font-bold mb-[1vh] lg:mb-[2vh]'>{title}</h2>
+      <p className='text-base lg:text-lg'>{description}</p>
+      <div className='mt-[3vh] lg:mt-[2vh] flex items-center'>
         <span className='text-base lg:text-lg font-medium underline lg:group-hover:no-underline cursor-pointer'>
           Read More
         </span>
-        <ArrowRight size={20} className='ml-1 lg:group-hover:translate-x-[5px] lg:transition-all lg:duration-500' />
+        <ArrowRight className='ml-[0.25rem] w-[1.25rem] h-[1.25rem] lg:group-hover:translate-x-[0.3rem] lg:transition-all lg:duration-500' />
       </div>
     </Card>
   );
 };
 
-const WhatWeDo = ({ showTitle }: { showTitle: boolean }) => {
-  const services = [
+interface WhatWeDoProps {
+  showTitle: boolean;
+}
+
+const WhatWeDo: React.FC<WhatWeDoProps> = ({ showTitle }) => {
+  const services: Service[] = [
     {
       title: 'Situation Analysis',
       description:
@@ -66,18 +98,18 @@ const WhatWeDo = ({ showTitle }: { showTitle: boolean }) => {
   ];
 
   return (
-    <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-0 my-8 sm:my-12 lg:my-[5rem]'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-10'>
-        <div className='space-y-4 sm:space-y-6 lg:space-y-10'>
+    <div className='max-w-6xl mx-auto px-[4vw] sm:px-[3vw] lg:px-0 my-[4vh] sm:my-[5vh] lg:my-[6vh]'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-[6vw] md:gap-[1.5vw]'>
+        <div className='space-y-[3vh]'>
           {showTitle && (
-            <h1 className='text-3xl sm:text-4xl lg:text-5xl text-primary font-[800] text-center lg:text-left '>
+            <h1 className='text-3xl sm:text-4xl lg:text-5xl text-primary font-[800] text-center lg:text-left'>
               What We <br /> Do
             </h1>
           )}
           <WhatWeDoCard {...services[2]} className={services[2].hoverClass} />
           <WhatWeDoCard {...services[3]} className={services[3].hoverClass} />
         </div>
-        <div className='space-y-4 sm:space-y-6 lg:space-y-10'>
+        <div className='space-y-[3vh]'>
           <WhatWeDoCard {...services[0]} className={services[0].hoverClass} />
           <WhatWeDoCard {...services[1]} className={services[1].hoverClass} />
         </div>
