@@ -30,25 +30,33 @@ const News = () => {
   return (
     <nav className='w-full overflow-x-hidden'>
       {/* Hero Section */}
-      <div className='relative min-h-[50vh] sm:h-[65vh] flex flex-col items-center justify-center bg-accent/10 px-4 py-8 sm:py-16'>
+      <div className='w-full min-h-[60vh] sm:h-[70vh] flex items-center justify-center px-4 py-8 sm:py-16 bg-accent/10 relative overflow-hidden '>
         {/* Decorative SVGs with responsive positioning */}
-        <div className='absolute top-10 sm:top-20 right-0 opacity-10 transform rotate-12 scale-75 sm:scale-100 pointer-events-none' aria-hidden="true">
+        <div
+          className='absolute top-10 sm:top-20 right-0 opacity-10 transform rotate-12 scale-75 sm:scale-100 pointer-events-none'
+          aria-hidden='true'
+        >
           <HealthCareSVG />
         </div>
-        <div className='absolute -bottom-4 sm:bottom-0 left-0 opacity-10 -rotate-12 scale-75 sm:scale-100 pointer-events-none' aria-hidden="true">
+        <div
+          className='absolute -bottom-4 sm:bottom-0 left-0 opacity-10 -rotate-12 scale-75 sm:scale-100 pointer-events-none'
+          aria-hidden='true'
+        >
           <GlobalHealthSVG />
         </div>
 
         {/* Icon row with responsive spacing */}
-        <div className='absolute bottom-16 sm:bottom-32 right-0 flex justify-center space-x-8 sm:space-x-16 opacity-10 pointer-events-none' aria-hidden="true">
+        <div
+          className='absolute bottom-16 sm:bottom-32 right-0 flex justify-center space-x-8 sm:space-x-16 opacity-10 pointer-events-none'
+          aria-hidden='true'
+        >
           <Heart className='w-8 h-8 sm:w-12 sm:h-12 text-accent' />
           <Activity className='w-8 h-8 sm:w-12 sm:h-12 text-accent' />
         </div>
 
         <div className='max-w-3xl mx-auto text-center mt-8 sm:mt-20 z-10'>
           <h1 className='text-3xl sm:text-4xl md:text-5xl font-[800] mb-4 text-primary'>
-            Global Health Updates:{' '}
-            <span className='block sm:inline italic mt-2 sm:mt-0'>One Health, One World</span>
+            Global Health Updates: <span className='block sm:inline italic mt-2 sm:mt-0'>One Health, One World</span>
           </h1>
 
           <p className='text-base sm:text-lg text-gray-700 mb-6 sm:mb-10 max-w-2xl mx-auto'>
@@ -57,10 +65,7 @@ const News = () => {
             and communities worldwide.
           </p>
 
-          <Button 
-            className='mx-auto bg-accent hover:bg-accent/90 w-full sm:w-auto' 
-            disabled={isEmpty}
-          >
+          <Button className='mx-auto bg-accent hover:bg-accent/90 w-full sm:w-auto' disabled={isEmpty}>
             Explore Health News
           </Button>
         </div>
