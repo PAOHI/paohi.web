@@ -146,16 +146,10 @@ const WhoWeAre = () => {
           </div>
 
           <Tabs defaultValue='board'>
-            <TabsList className='grid grid-cols-3 max-w-[400px] mx-auto bg-primary/5 p-1 rounded-lg'>
-              <TabsTrigger value='board' className='data-[state=active]:bg-primary/15 rounded-md'>
-                Board of Directors
-              </TabsTrigger>
-              <TabsTrigger value='core' className='data-[state=active]:bg-primary/15 rounded-md'>
-                Core Team
-              </TabsTrigger>
-              <TabsTrigger value='admin' className='data-[state=active]:bg-primary/15 rounded-md'>
-                Admin Team
-              </TabsTrigger>
+            <TabsList className='grid grid-cols-3 max-w-[400px] mx-auto '>
+              <TabsTrigger value='board'>Board of Directors</TabsTrigger>
+              <TabsTrigger value='core'>Core Team</TabsTrigger>
+              <TabsTrigger value='admin'>Admin Team</TabsTrigger>
             </TabsList>
             <div className='mt-6 px-4'>
               <TabsContent value='board'>

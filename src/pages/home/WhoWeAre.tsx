@@ -1,7 +1,9 @@
 import { homeBgTexture } from '@/assets';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const WhoWeAre = () => {
+  const navigate = useNavigate();
   const cards = [
     {
       title: 'Our Mission',
@@ -60,7 +62,9 @@ const WhoWeAre = () => {
               Dedicated to advancing holistic wellbeing and sustainable socioeconomic progress in Africa.
             </p>
             <div className='pt-2'>
-              <Button className='w-full sm:w-auto'>Read More</Button>
+              <Button className='w-full sm:w-auto' onClick={() => navigate('who-we-are')}>
+                Read More
+              </Button>
             </div>
           </div>
 
