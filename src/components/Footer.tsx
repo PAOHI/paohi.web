@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           {/* Logo and About Section - Full width on mobile */}
           <div className='col-span-2 md:col-span-1 space-y-4'>
             <Link to='/' className='block'>
-              <img src={logo} alt='PAOHI Logo' className='h-[100px] w-auto' />
+              <img src={logo} alt='PAOHI Logo' className='h-[200px] w-auto' />
             </Link>
             <p className='text-sm text-dark mt-4'>
               Advancing One Health initiatives across Africa through research, education, and collaboration.
