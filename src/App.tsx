@@ -50,7 +50,7 @@ const App = () => {
     useEffect(() => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }, [pathname]);
 
@@ -63,7 +63,13 @@ const App = () => {
       <div className='antialiased min-h-screen flex flex-col'>
         <Navbar />
         <main className='flex-grow'>
-          <Suspense fallback={<Loader />}>
+          <Suspense
+            fallback={
+              <div className='flex items-center justify-center min-h-screen'>
+                <Loader />
+              </div>
+            }
+          >
             <Routes>
               {routes.map(route =>
                 route.authRequired ? (

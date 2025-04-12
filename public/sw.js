@@ -1,0 +1,3 @@
+
+          importScripts('serviceWorker.ts');
+        

@@ -51,17 +51,16 @@ const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps
 
   return (
     <Card className={`overflow-hidden bg-primary/10 rounded-xl lg:rounded-3xl border-none shadow-none ${className}`}>
-      <div className="relative w-full h-full">
-        {isImageLoading && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-        )}
+      <div className='relative w-full h-full'>
+        {isImageLoading && <div className='absolute inset-0 bg-gray-200 animate-pulse' />}
         <img
           data-image-id={imageId}
           src={isIntersecting ? src : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}
           alt={alt}
-          loading="lazy"
-          className={`w-full h-full object-cover transition-opacity duration-500 ${isImageLoading ? 'opacity-0' : 'opacity-100'
-            }`}
+          loading='lazy'
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isImageLoading ? 'opacity-0' : 'opacity-100'
+          }`}
         />
       </div>
     </Card>
