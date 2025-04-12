@@ -1,6 +1,6 @@
 import Home from './home';
 import WhoWeAre from './whoWeAre';
-import WhatWeDo from './whatWeDo';
+import OurServices from './ourServices';
 import OurApproach from './ourApproach';
 import Publications from './resources/publications';
 import ResearchPapers from './resources/researchPapers';
@@ -13,7 +13,7 @@ import NotFound from './notFound';
 // pages
 const HomePage: React.FC = () => <Home />;
 const WhoWeArePage: React.FC = () => <WhoWeAre />;
-const WhatWeDoPage: React.FC = () => <WhatWeDo />;
+const OurServicesPage: React.FC = () => <OurServices />;
 const OurApproachPage: React.FC = () => <OurApproach />;
 const PublicationsPage: React.FC = () => <Publications />;
 const ResearchPapersPage: React.FC = () => <ResearchPapers />;
@@ -27,7 +27,7 @@ const NotFoundPage: React.FC = () => <NotFound />;
 export {
   HomePage,
   WhoWeArePage,
-  WhatWeDoPage,
+  OurServicesPage,
   OurApproachPage,
   PublicationsPage,
   ResearchPapersPage,

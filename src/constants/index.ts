@@ -28,12 +28,12 @@ export const navItems: NavItem[] = [
     path: '/who-we-are',
   },
   {
-    label: 'What We Do',
-    path: '/what-we-do',
+    label: 'Our Services',
+    path: '/our-services',
   },
   { label: 'Our Approach', path: '/our-approach' },
   {
-    label: 'Resources',
+    label: 'Achievements',
     dropdownItems: [
       { label: 'Publications', path: '/publications' },
       { label: 'Research Papers', path: '/research-papers' },

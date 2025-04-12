@@ -1,7 +1,7 @@
 import { home3 } from '@/assets';
 import WhatWeDo from '../home/WhatWeDo';
 
-const WhatWeDoPage = () => {
+const OurServices = () => {
   return (
     <div className='min-h-screen w-full'>
       {/* Hero Section with background image */}
@@ -50,4 +50,4 @@ const WhatWeDoPage = () => {
   );
 };
 
-export default WhatWeDoPage;
+export default OurServices;

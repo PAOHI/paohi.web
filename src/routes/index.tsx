@@ -1,7 +1,7 @@
 import {
   HomePage,
   WhoWeArePage,
-  WhatWeDoPage,
+  OurServicesPage,
   OurApproachPage,
   PublicationsPage,
   ResearchPapersPage,
@@ -14,7 +14,7 @@ import {
 const routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
   { path: '/who-we-are', element: <WhoWeArePage /> },
-  { path: '/what-we-do', element: <WhatWeDoPage /> },
+  { path: '/our-services', element: <OurServicesPage /> },
   { path: '/our-approach', element: <OurApproachPage /> },
   { path: '/publications', element: <PublicationsPage /> },
   { path: '/research-papers', element: <ResearchPapersPage /> },
