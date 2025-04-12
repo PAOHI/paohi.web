@@ -1,21 +1,9 @@
 import Empty from '@/components/Empty';
 import { Button } from '@/components/ui/button';
 import { FolderGit2, ArrowDownNarrowWide } from 'lucide-react';
+import { ProjectsSVG } from '@/components/ProjectIcons';
 
 const Projects = () => {
-  // Projects-themed decorative SVG with responsive sizing
-  const ProjectsSVG = () => (
-    <svg viewBox='0 0 100 100' className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-gray-300'>
-      <rect x='20' y='20' width='60' height='60' fill='none' stroke='currentColor' strokeWidth='2' rx='8' />
-      <line x1='40' y1='40' x2='60' y2='40' stroke='currentColor' strokeWidth='2' />
-      <line x1='40' y1='50' x2='60' y2='50' stroke='currentColor' strokeWidth='2' />
-      <line x1='40' y1='60' x2='60' y2='60' stroke='currentColor' strokeWidth='2' />
-      <circle cx='30' cy='40' r='2' fill='currentColor' />
-      <circle cx='30' cy='50' r='2' fill='currentColor' />
-      <circle cx='30' cy='60' r='2' fill='currentColor' />
-    </svg>
-  );
-
   return (
     <div className='min-h-screen w-full overflow-x-hidden'>
       {/* Hero Section with background */}

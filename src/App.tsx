@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import routes from './routes';
 import { toast } from 'sonner';
@@ -20,9 +20,18 @@ const App = () => {
     window.addEventListener('offline', handleNetworkChange);
     window.addEventListener('online', handleNetworkChange);
 
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        setIsOnline(getNetworkStatus());
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     return () => {
       window.removeEventListener('offline', handleNetworkChange);
       window.removeEventListener('online', handleNetworkChange);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -39,7 +48,10 @@ const App = () => {
     const { pathname } = useLocation();
 
     useEffect(() => {
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }, [pathname]);
 
     return null;
@@ -48,20 +60,23 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Loader />
-      <div className='antialiased'>
+      <div className='antialiased min-h-screen flex flex-col'>
         <Navbar />
-        <Routes>
-          {routes.map(route =>
-            route.authRequired ? (
-              <Route key={route.path} path={route.path} element={<AuthGuard />}>
-                <Route path={route.path} element={route.element} />
-              </Route>
-            ) : (
-              <Route key={route.path} path={route.path} element={route.element} />
-            )
-          )}
-        </Routes>
+        <main className='flex-grow'>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              {routes.map(route =>
+                route.authRequired ? (
+                  <Route key={route.path} path={route.path} element={<AuthGuard />}>
+                    <Route path={route.path} element={route.element} />
+                  </Route>
+                ) : (
+                  <Route key={route.path} path={route.path} element={route.element} />
+                )
+              )}
+            </Routes>
+          </Suspense>
+        </main>
         <Footer />
       </div>
     </Router>

@@ -14,32 +14,54 @@ interface ImageData {
 
 const ImageCard = memo(({ src, alt, className, imageId, onLoad }: ImageCardProps) => {
   const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      setIsImageLoading(false);
-      onLoad(imageId);
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      {
+        rootMargin: '50px',
+      }
+    );
+
+    const imgElement = document.querySelector(`[data-image-id="${imageId}"]`);
+    if (imgElement) {
+      observer.observe(imgElement);
+    }
 
     return () => {
-      img.onload = null;
+      if (imgElement) {
+        observer.unobserve(imgElement);
+      }
     };
-  }, [src, imageId, onLoad]);
+  }, [imageId]);
+
+  useEffect(() => {
+    if (isIntersecting) {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        setIsImageLoading(false);
+        onLoad(imageId);
+      };
+    }
+  }, [isIntersecting, src, imageId, onLoad]);
 
   return (
     <Card className={`overflow-hidden bg-primary/10 rounded-xl lg:rounded-3xl border-none shadow-none ${className}`}>
-      <div className='relative w-full h-full'>
-        {isImageLoading && <div className='absolute inset-0 bg-gray-200 animate-pulse' aria-hidden='true' />}
+      <div className="relative w-full h-full">
+        {isImageLoading && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        )}
         <img
-          src={src}
+          data-image-id={imageId}
+          src={isIntersecting ? src : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}
           alt={alt}
-          loading='lazy'
-          decoding='async'
-          className={`w-full h-full object-cover transition-all duration-700 ${
-            isImageLoading ? 'opacity-0' : 'opacity-100'
-          }`}
+          loading="lazy"
+          className={`w-full h-full object-cover transition-opacity duration-500 ${isImageLoading ? 'opacity-0' : 'opacity-100'
+            }`}
         />
       </div>
     </Card>

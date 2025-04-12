@@ -8,7 +8,7 @@ import {
   NewsPage,
   ProjectsPage,
   GetInvolvedPage,
-  NotFoundPage,
+  NotFoundPage
 } from '@/pages';
 
 const routes: RouteObject[] = [

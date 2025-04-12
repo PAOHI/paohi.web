@@ -1,19 +1,9 @@
 import Empty from '@/components/Empty';
 import { Button } from '@/components/ui/button';
 import { ArrowDownNarrowWide, FileText } from 'lucide-react';
+import { ResearchSVG } from '@/components/ProjectIcons';
 
 const ResearchPapers = () => {
-  // Research-themed decorative SVG with responsive sizing
-  const ResearchSVG = () => (
-    <svg viewBox='0 0 100 100' className='w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-gray-300'>
-      <circle cx='50' cy='50' r='40' fill='none' stroke='currentColor' strokeWidth='2' />
-      <path d='M30 50 C30 30, 70 30, 70 50 C70 70, 30 70, 30 50' fill='none' stroke='currentColor' strokeWidth='2' />
-      <line x1='50' y1='30' x2='50' y2='70' stroke='currentColor' strokeWidth='2' />
-      <circle cx='50' cy='40' r='3' fill='currentColor' />
-      <circle cx='50' cy='60' r='3' fill='currentColor' />
-    </svg>
-  );
-
   return (
     <div className='min-h-screen w-full overflow-x-hidden'>
       {/* Hero Section with background */}
